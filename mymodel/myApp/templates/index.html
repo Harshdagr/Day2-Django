@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+
+    <title>my first page</title>
+   
+</head>
+<body>
+    <h1> welcome</h1>
+    {% if d %}
+    {% for k in d %}
+    <p> <img src="{{k.image.url}}" style="width:300px;height: 300px" ></p>
+
+    <p>ID:{{k.id}}</p>
+    <!-- <p>Title:{{k.title}}</p>
+    <p>Text:{{k.text}}</p>
+  
+    <p>Auth_detail:{{k.Auth_detail}}</p>
+    <p>Date:{{k.date}}</p> -->
+
+    
+   <a href="{% url 'delete' k.id %}">Delete record</a>
+    
+    
+    <hr>
+    {% endfor %}
+   
+     {% endif %}
+     <br>
+     
+  
+  <a href="{% url 'form1' %}">click here to create data</a>
+</body>
+</html>
